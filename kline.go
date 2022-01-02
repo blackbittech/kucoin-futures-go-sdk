@@ -15,8 +15,8 @@ func (as *ApiService) KLines(symbol, granularity string, startAt, endAt int64) (
 	req := NewRequest(http.MethodGet, "/api/v1/kline/query", map[string]string{
 		"symbol":      symbol,
 		"granularity": granularity,
-		"startAt":     IntToString(startAt),
-		"endAt":       IntToString(endAt),
+		"from":     IntToString(startAt),
+		"to":       IntToString(endAt),
 	})
 	return as.Call(req)
 }
